@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct carouselApp: App {
+struct CarouselApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(
+                viewModel: MainViewModel(
+                    repository: CarouselRepositoryImpl()
+                )
+            )
         }
     }
 }

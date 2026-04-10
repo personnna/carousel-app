@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct StatsBottomSheetView: View {
-    
-    private var statsService: StatsProviding = StatsService()
 
     let items: [ListItem]
     let pageIndex: Int
 
     var body: some View {
         
-        let stats = statsService.topCharacters(from: items, limit: 3)
+        let stats = calculateStats(from: items)
         
         VStack(spacing: StyleGuide.Stats.verticalSpacing) {
             Text("Page \(pageIndex + 1)")
@@ -40,13 +38,28 @@ struct StatsBottomSheetView: View {
         .presentationCornerRadius(16)
     }
     
-    init(
-        items: [ListItem],
-        pageIndex: Int,
-        statsService: StatsProviding = StatsService()
-    ) {
-        self.items = items
-        self.pageIndex = pageIndex
-        self.statsService = statsService
+    private func calculateStats(from items: [ListItem]) -> [(Character, Int)] {
+        
+        let text = items
+            .flatMap { [$0.title, $0.subtitle] }
+            .joined(separator: " ")
+            .lowercased()
+            .filter { $0.isLetter }
+        
+        var counts: [Character: Int] = [:]
+        
+        for char in text {
+            counts[char, default: 0] += 1
+        }
+        
+        return counts
+            .sorted {
+                if $0.value == $1.value {
+                    return $0.key < $1.key
+                }
+                return $0.value > $1.value
+            }
+            .prefix(3)
+            .map { ($0.key, $0.value) }
     }
 }

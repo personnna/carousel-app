@@ -8,10 +8,11 @@
 import Combine
 import Foundation
 
+@MainActor
 final class MainViewModel: ObservableObject {
-        
-    private let dataProvider: DataProviding
-
+    
+    private let repository: CarouselRepository
+    
     @Published var pages: [[ListItem]] = []
     @Published var currentPage: Int = 0
     @Published var searchText: String = ""
@@ -19,14 +20,14 @@ final class MainViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(dataProvider: DataProviding = DataProvider()) {
-        self.dataProvider = dataProvider
-        loadData()
+    init(repository: CarouselRepository) {
+        self.repository = repository
         setupBindings()
     }
-
-    private func loadData() {
-        pages = dataProvider.loadPages()
+    
+    func load() async {
+        guard pages.isEmpty else { return }
+        pages = await repository.getPages()
     }
     
     private func setupBindings() {
@@ -40,17 +41,17 @@ final class MainViewModel: ObservableObject {
     }
     
     var filteredItems: [ListItem] {
-        let query = debouncedSearchText
+        guard pages.indices.contains(currentPage) else { return [] }
+        
+        let items = pages[currentPage]
+        let query = searchText
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .lowercased()
-
-        guard !query.isEmpty else {
-            return pages[safe: currentPage] ?? []
+        
+        if query.isEmpty { return items }
+        
+        return items.filter {
+            $0.searchableText.contains(query)
         }
-
-        return pages[safe: currentPage]?.filter { item in
-            item.title.lowercased().contains(query) ||
-            item.subtitle.lowercased().contains(query)
-        } ?? []
     }
 }

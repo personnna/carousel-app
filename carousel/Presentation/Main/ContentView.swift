@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @StateObject private var viewModel = MainViewModel()
+    @StateObject var viewModel: MainViewModel
     @State private var showStats = false
+    
+    init(viewModel: MainViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -51,6 +55,10 @@ struct ContentView: View {
                         .padding(.bottom, StyleGuide.SearchBar.height + StyleGuide.Layout.bottomSearchBarPadding + StyleGuide.Layout.listToSearchBarSpacing)
                 }
             }
+            
+            .task {
+                await viewModel.load()
+            }
 
             HStack(spacing: 20) {
                 Image(systemName: "magnifyingglass")
@@ -81,5 +89,9 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+    ContentView(
+        viewModel: MainViewModel(
+            repository: CarouselRepositoryImpl()
+        )
+    )
 }
