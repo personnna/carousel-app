@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23B0E6332F87B8F5001EA83F /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 23B0E6322F87B8F5001EA83F /* AsyncAlgorithms */; };
+		23B0E6CE2F87DC13001EA83F /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 23B0E6CD2F87DC13001EA83F /* AsyncAlgorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		23B0E63C2F87BA23001EA83F /* PBXContainerItemProxy */ = {
+		23B0E6C72F87DC08001EA83F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 23265A162F364E2C00F8C18D /* Project object */;
 			proxyType = 1;
@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		23265A1E2F364E2C00F8C18D /* carousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		23B0E6382F87BA23001EA83F /* carouselTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carouselTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23B0E6C32F87DC08001EA83F /* carouselTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carouselTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -31,7 +31,7 @@
 			path = carousel;
 			sourceTree = "<group>";
 		};
-		23B0E6392F87BA23001EA83F /* carouselTests */ = {
+		23B0E6C42F87DC08001EA83F /* carouselTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = carouselTests;
 			sourceTree = "<group>";
@@ -43,14 +43,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23B0E6332F87B8F5001EA83F /* AsyncAlgorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		23B0E6352F87BA23001EA83F /* Frameworks */ = {
+		23B0E6C02F87DC08001EA83F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B0E6CE2F87DC13001EA83F /* AsyncAlgorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				23265A202F364E2C00F8C18D /* carousel */,
-				23B0E6392F87BA23001EA83F /* carouselTests */,
+				23B0E6C42F87DC08001EA83F /* carouselTests */,
 				23265A1F2F364E2C00F8C18D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				23265A1E2F364E2C00F8C18D /* carousel.app */,
-				23B0E6382F87BA23001EA83F /* carouselTests.xctest */,
+				23B0E6C32F87DC08001EA83F /* carouselTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,33 +95,33 @@
 			);
 			name = carousel;
 			packageProductDependencies = (
-				23B0E6322F87B8F5001EA83F /* AsyncAlgorithms */,
 			);
 			productName = carousel;
 			productReference = 23265A1E2F364E2C00F8C18D /* carousel.app */;
 			productType = "com.apple.product-type.application";
 		};
-		23B0E6372F87BA23001EA83F /* carouselTests */ = {
+		23B0E6C22F87DC08001EA83F /* carouselTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 23B0E63E2F87BA23001EA83F /* Build configuration list for PBXNativeTarget "carouselTests" */;
+			buildConfigurationList = 23B0E6C92F87DC08001EA83F /* Build configuration list for PBXNativeTarget "carouselTests" */;
 			buildPhases = (
-				23B0E6342F87BA23001EA83F /* Sources */,
-				23B0E6352F87BA23001EA83F /* Frameworks */,
-				23B0E6362F87BA23001EA83F /* Resources */,
+				23B0E6BF2F87DC08001EA83F /* Sources */,
+				23B0E6C02F87DC08001EA83F /* Frameworks */,
+				23B0E6C12F87DC08001EA83F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				23B0E63D2F87BA23001EA83F /* PBXTargetDependency */,
+				23B0E6C82F87DC08001EA83F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				23B0E6392F87BA23001EA83F /* carouselTests */,
+				23B0E6C42F87DC08001EA83F /* carouselTests */,
 			);
 			name = carouselTests;
 			packageProductDependencies = (
+				23B0E6CD2F87DC13001EA83F /* AsyncAlgorithms */,
 			);
 			productName = carouselTests;
-			productReference = 23B0E6382F87BA23001EA83F /* carouselTests.xctest */;
+			productReference = 23B0E6C32F87DC08001EA83F /* carouselTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +137,7 @@
 					23265A1D2F364E2C00F8C18D = {
 						CreatedOnToolsVersion = 26.2;
 					};
-					23B0E6372F87BA23001EA83F = {
+					23B0E6C22F87DC08001EA83F = {
 						CreatedOnToolsVersion = 26.2;
 						TestTargetID = 23265A1D2F364E2C00F8C18D;
 					};
@@ -153,7 +153,7 @@
 			mainGroup = 23265A152F364E2C00F8C18D;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				23B0E6312F87B8F4001EA83F /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
+				23B0E6CC2F87DC13001EA83F /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 23265A1F2F364E2C00F8C18D /* Products */;
@@ -161,7 +161,7 @@
 			projectRoot = "";
 			targets = (
 				23265A1D2F364E2C00F8C18D /* carousel */,
-				23B0E6372F87BA23001EA83F /* carouselTests */,
+				23B0E6C22F87DC08001EA83F /* carouselTests */,
 			);
 		};
 /* End PBXProject section */
@@ -174,7 +174,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		23B0E6362F87BA23001EA83F /* Resources */ = {
+		23B0E6C12F87DC08001EA83F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,7 +191,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		23B0E6342F87BA23001EA83F /* Sources */ = {
+		23B0E6BF2F87DC08001EA83F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,10 +201,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		23B0E63D2F87BA23001EA83F /* PBXTargetDependency */ = {
+		23B0E6C82F87DC08001EA83F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 23265A1D2F364E2C00F8C18D /* carousel */;
-			targetProxy = 23B0E63C2F87BA23001EA83F /* PBXContainerItemProxy */;
+			targetProxy = 23B0E6C72F87DC08001EA83F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -407,7 +407,7 @@
 			};
 			name = Release;
 		};
-		23B0E63F2F87BA23001EA83F /* Debug */ = {
+		23B0E6CA2F87DC08001EA83F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -429,7 +429,7 @@
 			};
 			name = Debug;
 		};
-		23B0E6402F87BA23001EA83F /* Release */ = {
+		23B0E6CB2F87DC08001EA83F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,11 +473,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		23B0E63E2F87BA23001EA83F /* Build configuration list for PBXNativeTarget "carouselTests" */ = {
+		23B0E6C92F87DC08001EA83F /* Build configuration list for PBXNativeTarget "carouselTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				23B0E63F2F87BA23001EA83F /* Debug */,
-				23B0E6402F87BA23001EA83F /* Release */,
+				23B0E6CA2F87DC08001EA83F /* Debug */,
+				23B0E6CB2F87DC08001EA83F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -485,7 +485,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		23B0E6312F87B8F4001EA83F /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
+		23B0E6CC2F87DC13001EA83F /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-async-algorithms.git";
 			requirement = {
@@ -496,9 +496,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		23B0E6322F87B8F5001EA83F /* AsyncAlgorithms */ = {
+		23B0E6CD2F87DC13001EA83F /* AsyncAlgorithms */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 23B0E6312F87B8F4001EA83F /* XCRemoteSwiftPackageReference "swift-async-algorithms" */;
+			package = 23B0E6CC2F87DC13001EA83F /* XCRemoteSwiftPackageReference "swift-async-algorithms" */;
 			productName = AsyncAlgorithms;
 		};
 /* End XCSwiftPackageProductDependency section */

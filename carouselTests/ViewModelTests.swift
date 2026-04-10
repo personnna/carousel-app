@@ -12,7 +12,7 @@ import XCTest
 final class ViewModelTests: XCTestCase {
 
     // MARK: - Filtering
-    
+
     func testFilteringMatchesSubtitle() async {
         let vm = MainViewModel(repository: MockRepository())
         
@@ -63,7 +63,7 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(result.count, 1)
     }
     
-    private final class MockRepository: CarouselRepository {
+    final class MockRepository: CarouselRepository {
         func getPages() async -> [[ListItem]] {
             return [
                 [
@@ -74,3 +74,5 @@ final class ViewModelTests: XCTestCase {
         }
     }
 }
+
+

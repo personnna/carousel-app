@@ -6,8 +6,9 @@
 //
 
 final class CarouselRepositoryImpl: CarouselRepository {
+    
     func getPages() async -> [[ListItem]] {
-        [
+        return [
             [
                 ListItem(title: "Apple", subtitle: "Fruit", imageName: "apple"),
                 ListItem(title: "Banana", subtitle: "Fruit", imageName: "banana")
@@ -15,6 +16,10 @@ final class CarouselRepositoryImpl: CarouselRepository {
             [
                 ListItem(title: "Orange", subtitle: "Citrus", imageName: "orange"),
                 ListItem(title: "Blueberry", subtitle: "Berry", imageName: "blueberry")
+            ],
+            [
+                ListItem(title: "Strawberry", subtitle: "Berry", imageName: "strawberry"),
+                ListItem(title: "Carrot", subtitle: "Vegetable", imageName: "carrot")
             ]
         ]
     }

@@ -56,18 +56,10 @@ final class MainViewModelAdvancedTests: XCTestCase {
         vm.searchText = "vegetable"
         let secondResult = vm.filteredItems
         
-        XCTAssertNotEqual(firstResult.first?.title, secondResult.first?.title)
-    }
-
-    // MARK: - Basic UI Integration
-    
-    func testContentViewHasItems() async {
-        let vm = MainViewModel(repository: MockRepository())
-        await vm.load()
-        
-        let view = ContentView(viewModel: vm)
-        
-        XCTAssertNotNil(view)
+        XCTAssertNotEqual(
+            firstResult.first?.title,
+            secondResult.first?.title
+        )
     }
     
     private final class MockRepository: CarouselRepository {

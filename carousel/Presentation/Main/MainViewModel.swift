@@ -6,52 +6,44 @@
 //
 
 import Combine
-import Foundation
 
 @MainActor
 final class MainViewModel: ObservableObject {
     
     private let repository: CarouselRepository
     
+    // MARK: - State
+    
     @Published var pages: [[ListItem]] = []
     @Published var currentPage: Int = 0
     @Published var searchText: String = ""
-    @Published private(set) var debouncedSearchText: String = ""
     
-    private var cancellables = Set<AnyCancellable>()
-    
-    init(repository: CarouselRepository) {
-        self.repository = repository
-        setupBindings()
-    }
-    
-    func load() async {
-        guard pages.isEmpty else { return }
-        pages = await repository.getPages()
-    }
-    
-    private func setupBindings() {
-        $searchText
-            .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
-            .removeDuplicates()
-            .sink { [weak self] value in
-                self?.debouncedSearchText = value
-            }
-            .store(in: &cancellables)
-    }
+    // MARK: - Computed
     
     var filteredItems: [ListItem] {
         guard pages.indices.contains(currentPage) else { return [] }
         
         let items = pages[currentPage]
-        let query = searchText
-            .trimmingCharacters(in: .whitespacesAndNewlines)
-            .lowercased()
         
-        if query.isEmpty { return items }
+        if searchText.isEmpty { return items }
         
         return items.filter {
-            $0.searchableText.contains(query)
+            ($0.title + " " + $0.subtitle)
+                .lowercased()
+                .contains(searchText.lowercased())
         }
+    }
+    
+    // MARK: - Init
+    
+    init(repository: CarouselRepository) {
+        self.repository = repository
+    }
+    
+    // MARK: - Load
+    
+    func load() async {
+        guard pages.isEmpty else { return }
+        pages = await repository.getPages()
     }
 }

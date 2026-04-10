@@ -13,9 +13,3 @@ struct ListItem: Identifiable {
     let subtitle: String
     let imageName: String
 }
-
-extension ListItem {
-    var searchableText: String {
-        "\(title) \(subtitle)".lowercased()
-    }
-}
